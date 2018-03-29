@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(cors());
 
-const port = 3000;
+const port = 8000;
 
-require('./app/routes')(app, {});
+require('../server/routes')(app, {});
 
 if (app.listen(port)) {
 	console.log("Live on port: " + port);
