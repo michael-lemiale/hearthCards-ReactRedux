@@ -13,7 +13,7 @@ function cardList(state = {listOfCards:[], isFetching: false, error: ''}, action
 			return Object.assign({}, state, {isFetching: false, listOfCards: action.listOfCards, error: ''});
 			break;
 		case FETCH_CARDS_ERROR:
-			return Object.assign({}, state, {isFetching: false, listOfCards: [], error: action.errorMsg})
+			return Object.assign({}, state, {isFetching: false, listOfCards: [], error: action.errorMsg});
 			break;
 		default:
 			return state;

@@ -24,8 +24,10 @@ export function getCards() {
 		fetch(endpoint).then(
 			// if successful
 			(r) => { return r.json(); }
+			
 			// if fails
-			,(err) => { dispatch(fetchCardsError(err)); }
+			,(err) => {dispatch(fetchCardsError(err)); }
+			
 		// if successful, get state
 		).then((json) => { dispatch(fetchCardsSuccess(json)); });
 	}

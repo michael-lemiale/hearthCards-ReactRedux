@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import App from '../containers/App.js';
 
 const mapStateToProps = (state, ownProps) => { return {
-	cardList: state.cardList
+	cardList: state.listOfCards
 }};
 
 const mapDispatchToProps = (dispatch, ownProps) => { return {
