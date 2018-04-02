@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import App from '../containers/App.js';
+import App from '../components/App.js';
 
-const mapStateToProps = (state, ownProps) => { return {
-	cardList: state.listOfCards
+const mapStateToProps = (state, ownProps) => {console.log(state); return {
+	cardList: state.cardList.listOfCards
 }};
 
 const mapDispatchToProps = (dispatch, ownProps) => { return {

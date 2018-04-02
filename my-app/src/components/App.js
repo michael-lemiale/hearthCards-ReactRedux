@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import Card from './Card.js'
 
 class App extends Component {
   constructor(props) {
   	super(props);
-    this.state = {cardList: []};
   }
 
   renderCards = () => {
+
   	if(!this.props.cardList) {
-  		console.log(this.props.cardList);
-  		console.log('nada');
+      return ':('
   	} else {
-  		console.log(this.props.cardList);
+      let cards = this.props.cardList;
+      let cardListFull = [];
+      for (let a in cards) {
+        cardListFull.push((<Card key = {a} cardData = {cards[a]}></Card>));
+      }
+      return cardListFull;
   	}
-  } 
+  }
 
   render() {
     return (
       <div className="App">
-      	{this.renderCards()}
+        <div className = "allCards">{this.renderCards()}</div>;
       </div>
     );
   }
