@@ -19,7 +19,7 @@ export function getCards() {
 	return function (dispatch, getState) {
 		// dispatch fetchCards to reducer
 		dispatch(fetchCardsRequest())
-		const endpoint = "http://uapc0eza6g:8000/cards/imgs/all/%20/?pageNum=1&pageSize=48"
+		const endpoint = "http://uapc0eza6g:8000/cards?pageNum=1&pageSize=48"
 		// start fetch from cards endpoint
 		fetch(endpoint).then(
 			// if successful

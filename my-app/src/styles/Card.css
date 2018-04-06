@@ -1,0 +1,7 @@
+.Card img {
+	transition: all .2s ease-in-out;
+}
+
+.Card img:hover {
+	transform: scale(1.2);
+}
