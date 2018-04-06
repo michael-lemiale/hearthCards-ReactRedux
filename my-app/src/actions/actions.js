@@ -23,7 +23,7 @@ export function getCards() {
 		// start fetch from cards endpoint
 		fetch(endpoint).then(
 			// if successful
-			(r) => { return r.json(); }
+			(r) => { gtag('event', 'cardSearch'); return r.json(); }
 			
 			// if fails
 			,(err) => {dispatch(fetchCardsError(err)); }
