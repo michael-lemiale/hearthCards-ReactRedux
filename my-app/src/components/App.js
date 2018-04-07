@@ -3,6 +3,8 @@ import '../styles/App.css';
 import Card from './Card.js';
 import Header from './Header.js';
 import ResultPanelContainer from '../containers/ResultPanelContainer.js';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import spinner from '@fortawesome/fontawesome-free-solid/faSpinner';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +28,7 @@ class App extends Component {
   showLoading = () => {
     if (this.props.isFetching) {
       console.log('loading');
-      return '../img/background_img_2.jpg';
+      return ( <FontAwesomeIcon className="Spinner" icon={spinner} /> );
     }
     else {
       return '';
@@ -39,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Header></Header>
         <ResultPanelContainer>
-          <div className = "loadIcon"><img src={this.showLoading()}/></div>
+          <div className ="loading">{this.showLoading()}</div>
           <div className = "allCards">{this.renderCards()}</div>
         </ResultPanelContainer>
       </div>

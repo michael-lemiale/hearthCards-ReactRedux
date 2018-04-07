@@ -15,6 +15,55 @@
   padding-left: 25px;
 
   box-shadow: 0 0 .1em 0.1em white;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.App .Header .leftSide {
+  width: 50vw;
+  height: 100px;
+
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: flex-end;
+}
+
+.App .Header .filter {
+  font-size: 40px;
+  margin-top: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+
+}
+
+.App .Header .rightSide {
+  width: 50vw;
+  height: 100px;
+
+}
+
+.App .Header .searchText {
+  border-radius: 15px;
+  height: 40px;
+  width: 200px;
+  margin-top: 25px;
+  margin-right: 75px;
+  font-family: inherit;
+  text-align: left;
+  border: 3px solid #555;
+  background-image: url("../img/searchIconScaled2.png");
+  background-repeat: no-repeat;
+  background-position: 0;
+  padding-left: 35px;
+  font-size: 17px;
+  box-shadow: 0 0 .1em 0.1em white;
+  float: right;
+}
+
+.App .Header .searchText:focus {
+  box-shadow: 0 0 .4em 0.5em white;
+  outline: none;
 }
 
 .App .ResultPanel {
