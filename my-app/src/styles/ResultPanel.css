@@ -1,0 +1,7 @@
+.ResultPanel {
+	transition: transform 1s ease;
+}
+
+.ResultPanel.moveRight {
+  transform: translate(50vw);
+}

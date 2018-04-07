@@ -43,3 +43,9 @@ export function getCards() {
 		).then((json) => { dispatch(fetchCardsSuccess(json)); });
 	}
 }
+
+export const MOVE_CARDS_RIGHT = 'MOVE_CARDS_RIGHT';
+
+export function moveCardsRight(shouldMove) {
+	return {type: MOVE_CARDS_RIGHT, nClass: shouldMove};
+};

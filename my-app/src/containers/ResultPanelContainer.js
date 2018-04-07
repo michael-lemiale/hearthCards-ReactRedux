@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ResultPanel from '../components/ResultPanel.js';
 
 const mapStateToProps = (state, ownProps) => {console.log(state); return {
+	nClass: state.moveCard.nClass
 }};
 
 const mapDispatchToProps = (dispatch, ownProps) => { return {
