@@ -7,7 +7,7 @@ class Card extends Component {
   }
 
   imgErr(e) {
-    e.target.parentNode.classList.add('hidden');
+    e.target.parentNode.classList.add('hideDisplay');
   }
 
   render() {

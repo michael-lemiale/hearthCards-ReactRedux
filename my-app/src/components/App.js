@@ -29,12 +29,10 @@ class App extends Component {
 
   showLoading = () => {
     if (this.props.isFetching) {
-      console.log('loading');
-      return <FontAwesomeIcon className="Spinner" icon={spinner} />;
+      return <FontAwesomeIcon className="spin" icon={spinner} />;
     }
     else {
       return '';
-      console.log('not loading');
     }
   }
 

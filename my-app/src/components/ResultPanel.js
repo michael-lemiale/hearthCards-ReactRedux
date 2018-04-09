@@ -8,10 +8,8 @@ class ResultPanel extends Component {
 
   shouldMove = () => {
     if (this.props.nClass) {
-      console.log('moveRight');
       return 'moveRight';
     } else {
-      console.log('naw');
       return '';
     }
   }
