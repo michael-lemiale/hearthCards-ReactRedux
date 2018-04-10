@@ -21,7 +21,7 @@
 }
 
 .App .Header .leftSide {
-  width: 50vw;
+  width: 25vw;
   height: 10vh;
 
   display: flex;
@@ -38,8 +38,11 @@
 }
 
 .App .Header .rightSide {
-  width: 50vw;
+  width: 75vw;
   height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
 }
 
 .App .Header .searchText {
@@ -47,17 +50,17 @@
   height: 40px;
   width: 200px;
   margin-top: 25px;
-  margin-right: 75px;
   font-family: inherit;
   text-align: left;
+
   border: 3px solid #555;
+  box-shadow: 0 0 .1em 0.1em white;
+
   background-image: url("../img/searchIconScaled2.png");
   background-repeat: no-repeat;
   background-position: 0;
   padding-left: 35px;
   font-size: 17px;
-  box-shadow: 0 0 .1em 0.1em white;
-  float: right;
 }
 
 .App .Header .searchText:focus {
@@ -65,10 +68,29 @@
   outline: none;
 }
 
+.App .Header .classFilters {
+  margin-top: 15px;
+  padding-left: 5px;
+
+}
+
+.App .Header .classFilter {
+  border-radius: 50px;
+  cursor: pointer; 
+}
+
+.App .Header .classFilter:hover {
+  opacity: .8;
+}
+
 .App .ResultPanel {
   width: 100vw;
   height: 100vw;
   transition: transform .75s ease;
+
+  z-index: 4;
+  
+  box-shadow: 0 0 .1em 0.1em white;
 
   background: url("../img/background_img_full_opac.jpeg");
   background-attachment: fixed;
@@ -76,9 +98,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  z-index: 4;
-  
-  box-shadow: 0 0 .1em 0.1em white;
+  position: static;
 }
 
 .App .loading {
@@ -88,6 +108,7 @@
   position: fixed;
   background: url("../img/background_img_full_opac.jpeg");
 
+  color: white;
   font-size: 100px;
   text-align: center; 
   padding-top: 50px;
@@ -141,9 +162,9 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow: hidden;
 
-  position: absolute;
+  position: relative;
+
 }
 
 .App .FilterBar {
@@ -174,7 +195,6 @@
   padding-right: 2vw;
   padding-left: 2vw;
   padding-bottom: 5vh;
-
 }
 
 .App .FilterBar .filterOption {
@@ -188,7 +208,7 @@
 }
 
 .App .FilterBar .filterOption:hover {
-  opacity: .8;
+  opacity: .85;
 }
 
 .App .hidden {

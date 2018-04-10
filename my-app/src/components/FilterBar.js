@@ -31,7 +31,7 @@ class FilterBar extends Component {
 		const validFilterTypes = this.state.filterTypes
 		let returnedFilters = [] 
 		for (let a in validFilterTypes) {
-			returnedFilters.push(<div className='filterOption'>
+			returnedFilters.push(<div key={a} className='filterOption'>
 														{this.capitalizeFirstLetter(validFilterTypes[a])}
 													</div>);
 		}

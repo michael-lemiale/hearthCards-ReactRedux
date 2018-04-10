@@ -3,7 +3,8 @@ import { combineReducers } from 'redux';
 import { FETCH_CARDS_REQUEST,
 		 FETCH_CARDS_SUCCESS,
 		 FETCH_CARDS_ERROR,
-		 MOVE_CARDS_RIGHT } from '../actions/actions.js'
+		 MOVE_CARDS_RIGHT,
+		 FILTER_CARDS_BY_CLASS } from '../actions/actions.js'
 
 function cardList(state = {listOfCards:[], isFetching: false, error: ''}, action) {
 	switch (action.type) {
@@ -31,5 +32,14 @@ function moveCard(state = {}, action) {
 	}
 }
 
-const rootReducer = combineReducers( { cardList, moveCard });
+function filterCard(state = {classFilter: ''}, action) {
+	switch (action.type) {
+		case FILTER_CARDS_BY_CLASS:
+			return Object.assign({}, state, {classFilter: action.classFilter})
+		default:
+			return state;
+	}
+}
+
+const rootReducer = combineReducers( { cardList, moveCard, filterCard });
 export default rootReducer;

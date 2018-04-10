@@ -1,9 +1,9 @@
 .Card img {
-	transition: all .2s ease-in-out;
+	transition: all .3s cubic-bezier(0.29, 0.48, 0.45, 0.94);
 	border-radius: 50px;
+	transform: scale(.85);
 }
 
 .Card img:hover {
-	transform: scale(1.1);
-	opacity: .85;
+	transform: scale(1.0);
 }

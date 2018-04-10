@@ -15,20 +15,14 @@ function fetchCardsSuccess(cardList) {
 	 return {type: FETCH_CARDS_SUCCESS, listOfCards: cardList};
 }
 
-// create a function to build string to append to url 
-// every time a filter fires, fire the buildstring function
-// add build string to end of url in getCards() and this will trigger getCards
-
-function buildString(filter) {
-	return 'pageNum=1&pageSize=48';
-}
-
 export function getCards() {
 	return function (dispatch, getState) {
 		// dispatch fetchCards to reducer
 		dispatch(fetchCardsRequest())
 		// state.filter returns object with the filters and their associated values
-		const endpoint = `https://hearth-server.herokuapp.com/cards?${buildString(getState().filter)}`;
+		console.log(getState());
+		const endpoint = 
+			`https://hearth-server.herokuapp.com/cards?${buildString(getState().filterCard)}`;
 		// start fetch from cards endpoint
 		fetch(endpoint).then(
 			// if successful
@@ -45,7 +39,22 @@ export function getCards() {
 }
 
 export const MOVE_CARDS_RIGHT = 'MOVE_CARDS_RIGHT';
-
+// set true or false to change class of result panel to move left or right
 export function moveCardsRight(shouldMove) {
 	return {type: MOVE_CARDS_RIGHT, nClass: shouldMove};
 };
+
+// create a function to build string to append to url 
+// every time a filter fires, fire the buildstring function
+// add build string to end of url in getCards() and this will trigger getCards
+
+export const FILTER_CARDS_BY_CLASS = 'FILTER_CARDS_BY_CLASS';
+
+function buildString(filter) {
+	return `pageNum=1&pageSize=48&class=${filter.classFilter}`;
+}
+
+
+export function filterCardsByClass(className) {
+	return {type: FILTER_CARDS_BY_CLASS, classFilter: className};
+}

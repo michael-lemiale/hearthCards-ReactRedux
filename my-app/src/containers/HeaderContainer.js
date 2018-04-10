@@ -1,14 +1,19 @@
 import { connect } from 'react-redux';
-import { moveCardsRight } from '../actions/actions.js';
+import { moveCardsRight, filterCardsByClass, getCards } from '../actions/actions.js';
 import Header from '../components/Header.js';
 
-const mapStateToProps = (state, ownProps) => {console.log(state); return {
+const mapStateToProps = (state, ownProps) => { return {
 	shouldMove: state.moveCard
 }};
 
 const mapDispatchToProps = (dispatch, ownProps) => { return {
 	moveCards: (shouldMove) => {
-		dispatch(moveCardsRight(shouldMove))
+		dispatch(moveCardsRight(shouldMove));
+	},
+
+	filterCardsClass: (classFilter) => {
+		console.log(dispatch(filterCardsByClass(classFilter)));
+		dispatch(getCards());
 	}
 }};
 
