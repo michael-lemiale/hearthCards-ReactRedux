@@ -107,6 +107,10 @@
   top: 10vh;
   position: fixed;
   background: url("../img/background_img_full_opac.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   color: white;
   font-size: 100px;
