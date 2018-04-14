@@ -1,0 +1,4 @@
+ .Header .selected { 
+  box-shadow: 0 0 .4em .5em white;
+  filter: brightness(125%);
+ }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Header.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import filter from '@fortawesome/fontawesome-free-solid/faFilter';
 import druidJPG from'../img/druid.jpg';
@@ -27,12 +28,20 @@ class Header extends Component {
     this.props.moveCards(!this.props.shouldMove.nClass);
   }
 
+  selected = (currentClass) => {
+    if (this.props.currClassFilter == currentClass) {
+      return 'selected';
+    } else {
+      return '';
+    }
+  }
+
   createClassFilters = () => {
     const validClasses = this.state.classes;
     let returnedClasses = [];
     for (let a in validClasses) {
       let currClass = validClasses[a];
-      returnedClasses.push(<img className='classFilter' key={a} src={this.state.classImgs[currClass]}
+      returnedClasses.push(<img className={`classFilter ${this.selected(currClass)}`} key={a} src={this.state.classImgs[currClass]}
                               onClick={() => {this.props.filterCardsClass(currClass)}} />);
     }
     return returnedClasses;

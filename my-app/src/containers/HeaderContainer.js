@@ -3,7 +3,8 @@ import { moveCardsRight, filterCardsByClass, getCards } from '../actions/actions
 import Header from '../components/Header.js';
 
 const mapStateToProps = (state, ownProps) => { return {
-	shouldMove: state.moveCard
+	shouldMove: state.moveCard,
+	currClassFilter: state.filterCard.classFilter
 }};
 
 const mapDispatchToProps = (dispatch, ownProps) => { return {
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => { return {
 	},
 
 	filterCardsClass: (classFilter) => {
-		console.log(dispatch(filterCardsByClass(classFilter)));
+		dispatch(filterCardsByClass(classFilter));
 		dispatch(getCards());
 	}
 }};
